@@ -24,3 +24,40 @@ module.exports = function(app) {
     });
   });
 };
+
+// Authentication request
+app.post("/login", passport.authenticate("local"), function(req, res) {
+  // If this function gets called, authentication was successful.
+  // `req.user` contains the authenticated user.
+  res.redirect("/users/" + req.user.username);
+});
+
+// Redirect issued after authenicating a request
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login"
+  })
+);
+
+// Flash Message in order to display status info to user
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: "Invalid username or password.",
+    successFlash: "Welcome!",
+    failureFlash: true
+  })
+);
+
+// Disable Session -- Passport establishes a persistent login session
+app.get(
+  "/api/users/me",
+  passport.authenticate("basic", { session: false }),
+  function(req, res) {
+    res.json({ id: req.user.id, username: req.user.username });
+  }
+);
