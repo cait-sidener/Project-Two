@@ -22,7 +22,6 @@ module.exports = function(app) {
       res.redirect("/members");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
-
   });
 
   // Here we've add our isAuthenticated middleware to this route.
