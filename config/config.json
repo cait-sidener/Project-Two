@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Pass4SQL",
-    "database": "exampledb",
+    "password": "Phantogram1!",
+    "database": "class_db",
     "host": "localhost",
     "dialect": "mysql"
   },

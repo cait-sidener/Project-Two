@@ -1,16 +1,3 @@
-DROP DATABASE IF EXISTS class_db;
-CREATE DATABASE class_db;
-USE class_db;
-
-CREATE TABLE class
-(
-	id int NOT NULL AUTO_INCREMENT,
-	schoolOfStudy varchar(255) NOT NULL,
-    classCode varchar(255) NOT NULL,
-    className varchar(255) NOT NULL,
-	PRIMARY KEY (id)
-);
-
 INSERT INTO class(schoolOfStudy, classCode, className) VALUES ("Architecture & Design", "CE 767", "Introduction to Fracture Mechanics"), 
 ("Architecture & Design", "ARCE 641", "Power Systems Engineering"), ("Arts", "FMS 315", "Survey of Japanese Film"), 
 ("Arts", "SCUL 362", "Art and Ecology"), ("Business", "ACCT 543", "Intro to Auditing"), ("Business", "BSAN 330", "Project Management"),
