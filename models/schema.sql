@@ -1,5 +1,12 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS class_db;
+CREATE DATABASE class_db;
+USE class_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE class
+(
+	id int NOT NULL AUTO_INCREMENT,
+	schoolOfStudy varchar(255) NOT NULL,
+    classCode varchar(255) NOT NULL,
+    className varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);
