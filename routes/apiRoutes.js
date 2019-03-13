@@ -1,24 +1,35 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all results
+  app.get("/api/results", function(req, res) {
+    db.Result.findAll({}).then(function(dbResult) {
+      res.json(dbResult);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new result
+  app.post("/api/results", function(req, res) {
+    console.log(req.body);
+    db.Result.create({
+      schoolOfStudy: req.body.schoolOfStudy,
+      classCode: req.body.classCode,
+      className: req.body.className
+    }).then(function(dbResult) {
+      res.json(dbResult);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an result by id
+  app.delete("/api/results/:id", function(req, res) {
+    db.Result.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbResult) {
+      res.json(dbResult);
     });
   });
+
+  // Did not add update for now
 };
