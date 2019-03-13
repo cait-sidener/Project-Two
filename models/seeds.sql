@@ -9,4 +9,6 @@ INSERT INTO class(schoolOfStudy, classCode, className) VALUES ("Architecture & D
 ("Law", "LAW 809", "Contracts"), ("Law", "LAW 826", "Property"), ("Liberal Arts & Sciences", "CHEM 130", "General Chemistry I"),
 ("Medicine", "HP&M 810", "The Healthcare System"), ("Medicine", "HP&M 822", "Healthcare Economics"), ("Music", "MEMT 451", "Teaching Instrumental Music"),
 ("Music", "MTHC 115", "Theory II"), ("Nursing", "NURS 301", "Introduction to Professional Nursing"), ("Nursing", "NURS 303", "Communicating and Managing Healthcare Information"),
-("Pharmacy", "CHEM 624", "Organic Chemistry"), ()
+("Pharmacy", "CHEM 624", "Organic Chemistry"), ("Pharmacy", "CHEM 640", "Physical Chemistry"), ("Public Affairs & Administration", "UBPL 335", "Sustainability and Society"),
+("Public Affairs & Administration", "UBPL 735", "Site Planning and Design"), ("Social Welfare", "SW 220", "Social Work, Social Welfare and US Society"),
+("Social Welfare", "SW 530", "Human Behavior in the Social Environment");
