@@ -14,7 +14,6 @@ module.exports = function(app) {
   app.post("/api/results", function(req, res) {
     console.log(req.body);
     db.Result.create({
-      schoolOfStudy: req.body.schoolOfStudy,
       classCode: req.body.classCode,
       className: req.body.className
     })
@@ -41,7 +40,6 @@ module.exports = function(app) {
   app.put("/api/results", function(req, res) {
     db.Result.update(
       {
-        schoolOfStudy: req.body.schoolOfStudy,
         classCode: req.body.classCode,
         className: req.body.className
       },
