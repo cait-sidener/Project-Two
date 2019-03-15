@@ -1,9 +1,6 @@
-console.log("checkSystemRequirements");
-console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
+const signature = require('zoom-meeting-signature');
 
-// it's option if you want to chenge the jssdk dependency link resources.
-// ZoomMtg.setZoomJSLib('https://dmogdx0jrul3u.cloudfront.net/1.3.7/lib', '/av'); // CDN version default
-// ZoomMtg.setZoomJSLib('http://localhost:9999/node_modules/zoomus-jssdk/dist/lib', '/av'); // Local version default
+const API_KEY = '8Vyk5SnKSbyTbM5kN6BSDg';
+const API_SECRET 'RZlM4nNX8RmC1aVuY0wfEfr2ZFNd89QN';
 
-ZoomMtg.preLoadWasm();
-ZoomMtg.prepareJssdk();
+let sig = signature.generate(MEETING_ID, API_KEY, API_SECRET, signature.roles.PARTICIPANT)
