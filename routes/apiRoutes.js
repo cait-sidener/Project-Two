@@ -1,9 +1,9 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-// ACTIONS FOR CLASS RESULTS
+// Use CRUD function to add, read, update, and delete class options
 module.exports = function(app) {
-  // Get all results
+  // Read all available results
   app.get("/api/results", function(req, res) {
     db.Result.findAll({}).then(function(dbResult) {
       res.json(dbResult);
@@ -14,15 +14,18 @@ module.exports = function(app) {
   app.post("/api/results", function(req, res) {
     console.log(req.body);
     db.Result.create({
-      schoolOfStudy: req.body.schoolOfStudy,
       classCode: req.body.classCode,
       className: req.body.className
-    }).then(function(dbResult) {
-      res.json(dbResult);
-    });
+    })
+      .then(function(dbResult) {
+        res.json(dbResult);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
-  // Delete an result by id
+  // Delete a result by id
   app.delete("/api/results/:id", function(req, res) {
     db.Result.destroy({
       where: {
@@ -31,6 +34,27 @@ module.exports = function(app) {
     }).then(function(dbResult) {
       res.json(dbResult);
     });
+  });
+
+  // Update a result by id
+  app.put("/api/results", function(req, res) {
+    db.Result.update(
+      {
+        classCode: req.body.classCode,
+        className: req.body.className
+      },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    )
+      .then(function(dbResult) {
+        res.json(dbResult);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   // Using the passport.authenticate middleware with our local strategy.
