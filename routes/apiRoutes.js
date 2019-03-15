@@ -3,59 +3,12 @@ var passport = require("../config/passport");
 
 // Use CRUD function to add, read, update, and delete class options
 module.exports = function(app) {
-  // Read all available results
-  app.get("/api/results", function(req, res) {
-    db.Result.findAll({}).then(function(dbResult) {
-      res.json(dbResult);
-    });
-  });
+  // Post
 
-  // Create a new result
-  app.post("/api/results", function(req, res) {
-    console.log(req.body);
-    db.Result.create({
-      classCode: req.body.classCode,
-      className: req.body.className
-    })
-      .then(function(dbResult) {
-        res.json(dbResult);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
+  // FindOne
+  
 
-  // Delete a result by id
-  app.delete("/api/results/:id", function(req, res) {
-    db.Result.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbResult) {
-      res.json(dbResult);
-    });
-  });
 
-  // Update a result by id
-  app.put("/api/results", function(req, res) {
-    db.Result.update(
-      {
-        classCode: req.body.classCode,
-        className: req.body.className
-      },
-      {
-        where: {
-          id: req.body.id
-        }
-      }
-    )
-      .then(function(dbResult) {
-        res.json(dbResult);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
 
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
