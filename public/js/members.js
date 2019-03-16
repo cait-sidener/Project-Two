@@ -1,10 +1,10 @@
 $(document).ready(function() {
   /* global moment */
-  // blogContainer holds all of our surveys
-  var postCategorySelect = $(".chosen-select");
+  // membersContainer holds all of our surveys
+  var surveyCategorySelect = $(".chosen-select");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.edit", handleSurveyEdit);
-  postCategorySelect.on("change", handleCategoryChange);
+  surveyCategorySelect.on("change", handleCategoryChange);
   var surveys;
 
   // This function grabs surveys from the database and updates the view
@@ -26,18 +26,18 @@ $(document).ready(function() {
 
   // Getting the initial list of surveys
   getSurveys();
-  // InitializeRows handles appending all of our constructed post HTML inside
-  // blogContainer
+  // InitializeRows handles appending all of our constructed survey HTML inside
+  // membersContainer
   function initializeRows() {
-    blogContainer.empty();
+    membersContainer.empty();
     var surveysToAdd = [];
     for (var i = 0; i < surveys.length; i++) {
       surveysToAdd.push(createNewRow(surveys[i]));
     }
-    blogContainer.append(surveysToAdd);
+    membersContainer.append(surveysToAdd);
   }
 
-  // This function constructs a post's HTML
+  // This function constructs a survey's HTML
   function createNewRow(survey) {
     var newSurveyCard = $("<div>");
     newSurveyCard.addClass("card");
@@ -73,7 +73,7 @@ $(document).ready(function() {
     return newSurveyCard;
   }
 
-  // This function figures out which post we want to edit and takes it to the
+  // This function figures out which survey we want to edit and takes it to the
   // Appropriate url
   function handleSurveyEdit() {
     var currentSurvey = $(this)
@@ -85,15 +85,15 @@ $(document).ready(function() {
 
   // This function displays a message when there are no surveys
   function displayEmpty() {
-    blogContainer.empty();
+    membersContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({
       "text-align": "center",
       "margin-top": "50px"
     });
     messageH2.html(
-      "No surveys yet for this category, navigate <a href='/cms'>here</a> in order to create a new post."
+      "No surveys yet for this category, navigate <a href='/cms'>here</a> in order to create a new survey."
     );
-    blogContainer.append(messageH2);
+    membersContainer.append(messageH2);
   }
 });

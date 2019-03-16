@@ -53,18 +53,37 @@ module.exports = function(app) {
     }
   });
   // Survey Post
+  // POST route for saving a new survey
   app.post("/api/survey", function(req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    db.Survey.create(req.body).then(function(dbSurvey) {
-      res.json(dbSurvey);
+    // create takes an argument of an object describing the item we want to insert
+    // into our table. In this case we just we pass in an object with a text and
+    // complete property
+    var userData = {
+      name: req.body.name,
+      email: req.body.email,
+      html: req.body.html,
+      css: req.body.css,
+      javascript: req.body.javascript
+    };
+    db.Survey.create(userData).then(function() {
+      // We have access to the new todo as an argument inside of the callback function
+      db.Survey.findAll({
+        where: {
+          html: userData.html,
+          css: userData.css,
+          javascript: userData.javascript
+        }
+      }).then(function(result) {
+        res.render("members", {
+          data: result
+        });
+      });
     });
   });
 
   // FindOne
-  app.get("api/survey:id", function(req, res) {
-    db.Survey.fineOne({
+  app.get("/api/survey/:id", function(req, res) {
+    db.Survey.findOne({
       where: {
         id: req.params.id
       }

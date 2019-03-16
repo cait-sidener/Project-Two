@@ -30,21 +30,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  // Index
+
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/cms", function(req, res) {
     db.Result.findAll({}).then(function(dbResult) {
-      res.render("index", {
+      res.render("cms", {
         results: dbResult
       });
     });
-  });
-
-  // Zoom
-  app.get("/meeting", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/zoom");
-    }
-    res.sendFile(path.join(__dirname, "../public/zoom.html"));
   });
 };
