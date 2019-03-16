@@ -38,4 +38,13 @@ module.exports = function(app) {
       });
     });
   });
+
+  // Zoom
+  app.get("/meeting", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/zoom");
+    }
+    res.sendFile(path.join(__dirname, "../public/zoom.html"));
+  });
 };
