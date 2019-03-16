@@ -31,6 +31,8 @@ $(document).ready(function() {
 
   // Update a given survey, bring user to the members page when done
   function insertSurvey() {
+    var urlParts = window.location.pathname.split("/");
+    console.log(urlParts)
     var survey = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
@@ -38,14 +40,14 @@ $(document).ready(function() {
       css: css.val(),
       javascript: javascript.val()
     };
-    $.post("/api/survey", survey, function() {
-      emailInput.val("");
-      nameInput.val("");
-      cmsForm.val("");
-      html.val("");
-      css.val("");
-      javascript.val("");
-      window.location.href = "/members";
-    });
+    // $.post("/api/survey", survey, function() {
+    //   emailInput.val("");
+    //   nameInput.val("");
+    //   cmsForm.val("");
+    //   html.val("");
+    //   css.val("");
+    //   javascript.val("");
+    //   window.location.href = "/members";
+    // });
   }
 });

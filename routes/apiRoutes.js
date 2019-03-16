@@ -69,7 +69,7 @@ module.exports = function(app) {
       email: req.body.email,
       html: req.body.html,
       css: req.body.css,
-      javascript: req.body.javascript
+      javascript: req.body.javascript,
     };
     db.Survey.create(userData).then(function() {
       // We have access to the new todo as an argument inside of the callback function

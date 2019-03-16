@@ -42,12 +42,8 @@ module.exports = function(app) {
 
   // Index
 
-  // Load index page
+  // Load cms page
   app.get("/cms", function(req, res) {
-    db.Result.findAll({}).then(function(dbResult) {
-      res.render("cms", {
-        results: dbResult
-      });
-    });
+    res.render("cms");
   });
 };
