@@ -29,16 +29,8 @@ $(document).ready(function() {
     insertSurvey();
   });
 
-  // Submits a new survey and brings user to members page upon completion
-  function submitSurvey(survey) {
-    $.get("/api/survey", survey, function() {
-      window.location.href = "/members";
-    });
-  }
-
   // Update a given survey, bring user to the members page when done
-  function insertSurvey(event) {
-    event.preventDefault();
+  function insertSurvey() {
     var survey = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
@@ -46,14 +38,14 @@ $(document).ready(function() {
       css: css.val(),
       javascript: javascript.val()
     };
-    $.post("/api/survey", survey, function(){
+    $.post("/api/survey", survey, function() {
       emailInput.val("");
       nameInput.val("");
       cmsForm.val("");
       html.val("");
       css.val("");
       javascript.val("");
-      submitSurvey(survey);
+      window.location.href = "/members";
     });
   }
 });
