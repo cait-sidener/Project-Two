@@ -38,16 +38,17 @@ a:link {
   height: 80px;
 }
 
-.buttonsContainer{
+/* .buttonsContainer{
   display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+  justify-content: right;
+  margin-right: 15px;
 }
 
 .buttonsContainer > .btnContainer{
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
+  grid-column-start: 3;
+  grid-column-end: 4;
+} */
 
 .headerName{
   display: flex;
@@ -59,7 +60,7 @@ a:link {
 .skew-fix{
   display:inline-block;
   transform: skew(20deg);
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bolder;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
@@ -76,8 +77,8 @@ a:link {
   text-decoration:none;
   margin: 5px;
   transform: skew(-20deg);
-  height: 15em;
-  width: 15em;
+  height: 3em;
+  width: 10em;
 }
 
 .btn:hover {
