@@ -40,10 +40,4 @@ module.exports = function(app) {
     // console.log(req.params.id);
   });
 
-  // Index
-
-  // Load cms page
-  app.get("/cms", function(req, res) {
-    res.render("cms");
-  });
 };

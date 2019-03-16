@@ -1,15 +1,4 @@
 $(document).ready(function() {
-  // Gets an optional query string from our url (i.e. ?survey_id=23)
-  var url = window.location.search;
-  var surveyId;
-
-  // If we have this section in our url, we pull out the survey id from the url
-  // In localhost:8080/cms?survey_id=1, surveyId is 1
-  if (url.indexOf("?survey_id=") !== -1) {
-    surveyId = url.split("=")[1];
-    getsurveyData(surveyId);
-  }
-
   // Getting jQuery references to the survey email, name, form, and category select
   var emailInput = $("#email");
   var nameInput = $("#name");
@@ -40,14 +29,14 @@ $(document).ready(function() {
       css: css.val(),
       javascript: javascript.val()
     };
-    // $.post("/api/survey", survey, function() {
-    //   emailInput.val("");
-    //   nameInput.val("");
-    //   cmsForm.val("");
-    //   html.val("");
-    //   css.val("");
-    //   javascript.val("");
-    //   window.location.href = "/members";
-    // });
+    $.post("/api/survey", survey, function() {
+      emailInput.val("");
+      nameInput.val("");
+      cmsForm.val("");
+      html.val("");
+      css.val("");
+      javascript.val("");
+      window.location.href = "/members";
+    });
   }
 });
