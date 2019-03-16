@@ -70,6 +70,7 @@ module.exports = function(app) {
       html: req.body.html,
       css: req.body.css,
       javascript: req.body.javascript,
+      UserId: req.body.UserId
     };
     db.Survey.create(userData).then(function() {
       // We have access to the new todo as an argument inside of the callback function
@@ -80,9 +81,7 @@ module.exports = function(app) {
           javascript: userData.javascript
         }
       }).then(function(result) {
-        res.render("members", {
-          data: result
-        });
+        res.json(result);
       });
     });
   });

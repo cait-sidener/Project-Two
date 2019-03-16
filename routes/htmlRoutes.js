@@ -32,12 +32,11 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(result) {
-      console.log(result);
+      console.log("RESULT: ", result);
       res.render("members", {
-        results: result
+        data: result
       });
     });
     // console.log(req.params.id);
   });
-
 };
