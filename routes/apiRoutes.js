@@ -3,13 +3,6 @@ var passport = require("../config/passport");
 
 // Use CRUD function to add, read, update, and delete class options
 module.exports = function(app) {
-  // Post
-
-  // FindOne
-  
-
-
-
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -58,5 +51,25 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+  // Survey Post
+  app.post("/api/survey", function(req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+    db.Survey.create(req.body).then(function(dbSurvey) {
+      res.json(dbSurvey);
+    });
+  });
+
+  // FindOne
+  app.get("api/survey:id", function(req, res) {
+    db.Survey.fineOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbSurvey) {
+      res.json(dbSurvey);
+    });
   });
 };
