@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>CMS - Express</title>
-    <!-- Latest compiled and minified CSS & JS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="row">
-                <div class="col-sm-2 mt-4">
-                    <a class="btn btn-light" href="/members">Go to Profile Page</a>
-                </div>
-            </div>
-            <div class="row">
+  <div class="container blog">
+    <div class="row">
+      <div class="col-md-2 col-sm-2">
+        <a class="btn btn-default" href="/cms">Survey</a>
+      </div>
+    <div class="row">
+      <div class="col-md-12 blog-container">
+       {{!-- if survey show results --}}
+       {{#unless data}}
+        <button>Take Survey</button>
+            <div id="survey-form" class="row">
                 <div class="col-8 offset-2">
                     <div class="card mt-4">
                         <div class="card-body">
@@ -81,11 +70,45 @@
                     </div>
                 </div>
             </div>
+            
+        {{/unless}}
+
+
+       {{#if data}}
+        {{#each data}}
+            <li>{{name}}</li>
+            <li>{{email}}</li>
+            <li>{{html}}</li>
+            <li>{{css}}</li>
+            <li>{{javascript}}</li>
+
+        {{/each}}
+       {{/if}}
+      </div>
+    </div>
+  </div>
+
+      <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                    </button>
+                    <h2 class="modal-title">
+                        <strong>Study Buddy</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Custom Script -->
-    <script src="js/cms.js" type="text/javascript"></script>
-
-</body>
-
-</html>
+  </div>
+  
+  <!-- Custom Script -->
+  <script src="/js/members.js" type="text/javascript"></script>

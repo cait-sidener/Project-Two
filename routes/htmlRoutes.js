@@ -26,25 +26,17 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
-  });
-
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Result.findAll({}).then(function(dbResult) {
-      res.render("index", {
-        results: dbResult
+  app.get("/members/:id", isAuthenticated, function(req, res) {
+    db.Survey.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      console.log("RESULT: ", result);
+      res.render("members", {
+        data: result
       });
     });
-  });
-
-  // Zoom
-  app.get("/meeting", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/zoom");
-    }
-    res.sendFile(path.join(__dirname, "../public/zoom.html"));
+    // console.log(req.params.id);
   });
 };
