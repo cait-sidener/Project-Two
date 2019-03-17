@@ -21,6 +21,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "sequelize": "^4.38.0",
+    "socket.io": "^2.2.0",
     "zoomus-jssdk": "^1.3.8"
   },
   "devDependencies": {
