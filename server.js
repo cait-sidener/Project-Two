@@ -3,6 +3,9 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var session = require("express-session");
 
+// Requiring for video conference. NOTE: npm install --save socket.io
+var io = require("socket.io")();
+
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
@@ -15,12 +18,26 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
+
+// Passport middleware - We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Video conference middleware
+io.use(function(socket, next) {
+  var token = socket.handshake.query.token;
+  if (isValid(token)) {
+    return next();
+  }
+  return next(new Error("authentication error"));
+});
+
+io.on("connection", function(socket) {
+  token = socket.handshake.query.token;
+});
 
 // Handlebars
 app.engine(
