@@ -1,71 +1,5 @@
-/* .list-group-item {
-  line-height: 2.5;
-} */
-html, body {
-  margin: 0;
-
-}
-
-#mainContainer{
-  background-color: #e8000d;
-  height: 100%;
-  background-image: url('../images/server_img.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-
-}
-
-#contentContainer{
-
-}
-
-#jumbotron{
-  color: #85898a;
-  background-color: #0051ba;
-}
-
 a:link {
   color: #e8000d;
-}
-
-.headerNav{
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 5%;
-  background-color: #85898a;
-  color: #e8000d; 
-  width: 100%;
-  height: 80px;
-}
-
-/* .buttonsContainer{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: right;
-  margin-right: 15px;
-}
-
-.buttonsContainer > .btnContainer{
-  grid-column-start: 3;
-  grid-column-end: 4;
-} */
-
-.headerName{
-  display: flex;
-  justify-content: space-around;
-  background-color: #0051ba;
-
-}
-
-.skew-fix{
-  display:inline-block;
-  transform: skew(20deg);
-  font-size: 1em;
-  font-weight: bolder;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-
 }
 
 .btn {
@@ -83,4 +17,98 @@ a:link {
 
 .btn:hover {
   box-shadow: 0 0 0 ;
+}
+
+/* .buttonsContainer{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: right;
+  margin-right: 15px;
+}
+
+.buttonsContainer > .btnContainer{
+  grid-column-start: 3;
+  grid-column-end: 4;
+} */
+
+.card {
+  width: 300%;
+}
+
+.container--results {
+  margin-top: 30%;
+}
+
+.headerName{
+  display: flex;
+  justify-content: space-around;
+  background-color: #0051ba;
+}
+
+.headerNav{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+  background-color: #85898a;
+  color: #e8000d; 
+  width: 100%;
+  height: 80px;
+}
+
+html, body {
+  margin: 0;
+}
+
+#jumbotron{
+  color: #85898a;
+  background-color: #0051ba;
+}
+
+/* .list-group-item {
+  line-height: 2.5;
+} */
+
+#mainContainer{
+  background-color: #e8000d;
+  height: 100%;
+  background-image: url('../images/server_img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#results td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+#results th {
+  background-color: #0051ba;
+  color: #fff;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.skew-fix{
+  display:inline-block;
+  transform: skew(20deg);
+  font-size: 1em;
+  font-weight: bolder;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#survey-submit {
+  background-color: #0051ba;
+  color: #fff;
+  font-size: 1.2em;
+  margin-top: 4%;
+  transform: none;
+  width: 20%;
+}
+
+table {
+  width: 150%;
 }
