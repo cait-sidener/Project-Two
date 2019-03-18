@@ -59,9 +59,7 @@ a:link {
 } */
 
 #mainContainer{
-  background-color: #e8000d;
   height: 100%;
-  background-image: url('../images/server_img.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -96,10 +94,9 @@ a:link {
   width: 20%;
 }
 
-table {
-  width: 150%;
+tr{
+  background-color: #85898a;
 }
-
 /* Chatroom styling */
 /* Fix user-agent */
 
@@ -124,6 +121,7 @@ html, input {
 }
 
 html, body {
+  overflow-x: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -284,4 +282,11 @@ h2{
   position: absolute;
   right: 0;
   width: 100%;
+}
+
+/* Member */
+
+table#results {
+  width: calc(100% - 20px);
+  margin: 0px 10px;
 }
