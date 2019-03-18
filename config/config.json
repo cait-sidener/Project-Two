@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Pass4SQL",
+    "password": "password",
     "database": "class_db",
     "host": "localhost",
     "dialect": "mysql"
