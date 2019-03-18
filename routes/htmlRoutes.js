@@ -40,6 +40,6 @@ module.exports = function(app) {
   });
 
   app.get("/resources", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/resource.html"));
+    res.sendFile(path.join(__dirname, "../public/resources.html"));
   });
 };
