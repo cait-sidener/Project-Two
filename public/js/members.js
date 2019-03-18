@@ -1,5 +1,5 @@
 $(document).ready(function() {
- // Getting jQuery references to the survey email, name, form, and category select
+  // Getting jQuery references to the survey email, name, form, and category select
   var emailInput = $("#email");
   var nameInput = $("#name");
   var cmsForm = $("#cms");

@@ -19,6 +19,12 @@ a:link {
   box-shadow: 0 0 0 ;
 }
 
+#btnContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 /* .buttonsContainer{
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -39,7 +45,7 @@ a:link {
   margin-top: 30%;
 }
 
-.headerName{
+.headerName {
   display: flex;
   justify-content: space-around;
   background-color: #0051ba;
