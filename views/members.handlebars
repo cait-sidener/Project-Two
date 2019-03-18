@@ -1,117 +1,153 @@
-<div class="container blog">
+<div id="mainContainer">
+        <div class="headerWrap">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">SB LOGO</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chat</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+</div>
+
+<div class="container--blog">
+  <div class="row">
+    <div class="col-md-2 col-sm-2">
+    </div>
     <div class="row">
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/cms">Survey</a>
-        </div>
-        <div class="row">
-            <div class="col-md-12 blog-container">
-                {{!-- if survey show results --}}
-                {{#unless data}}
-                <button>Take Survey</button>
-                <div id="survey-form" class="row">
-                    <div class="col-8 offset-2">
-                        <div class="card mt-4">
-                            <div class="card-body">
+      <div class="col-md-12 blog-container">
+        {{!-- if survey show results --}}
+        {{#unless data}}
+        <button>Take Survey</button>
+        <div id="survey-form" class="row">
+          <div class="col-8 offset-2">
+            <div class="card mt-4">
+              <div class="card-body">
 
-                                <h5 class="card-title"></h5>
-                                <form id="cms">
-                                    <h1>Survey Questions</h1>
-                                    <hr>
-                                    <br>
-                                    <div class="input-field col s6">
-                                        <h5>Name (Required)</h5>
-                                        <input type="text" class="form-control" id="name" required>
-                                    </div>
-                                    <br>
-                                    <div class="input-field col s6">
-                                        <h5>Email (Required)</h5>
-                                        <input type="text" class="form-control" id="email" required>
-                                    </div>
-                                    <br>
+                <h5 class="card-title"></h5>
+                <form id="cms">
+                  <h1>Survey Questions</h1>
+                  <hr>
+                  <br>
+                  <div class="input-field col s6">
+                    <h5>Name (Required)</h5>
+                    <input type="text" class="form-control" id="name" required>
+                  </div>
+                  <br>
+                  <div class="input-field col s6">
+                    <h5>Email (Required)</h5>
+                    <input type="text" class="form-control" id="email" required>
+                  </div>
+                  <br>
 
-                                    <div class="input-field col s12">
-                                        <h5>HTML Expertise Level</h5>
-                                        <select class="chosen-select" id="question1"
-                                            aria-placeholder="Select an Option">
-                                            <option value></option>
-                                            <option value="1">1 (Novice)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5 (Expert)</option>
-                                        </select>
+                  <div class="input-field col s12">
+                    <h5>HTML Expertise Level</h5>
+                    <select class="chosen-select" id="question1" aria-placeholder="Select an Option">
+                      <option value></option>
+                      <option value="1">1 (Novice)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Expert)</option>
+                    </select>
 
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <h5>CSS Expertise Level</h5>
-                                        <select class="chosen-select" id="question2"
-                                            aria-placeholder="Select an Option">
-                                            <option value></option>
-                                            <option value="1">1 (Novice)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5 (Expert)</option>
-                                        </select>
+                  </div>
+                  <div class="input-field col s12">
+                    <h5>CSS Expertise Level</h5>
+                    <select class="chosen-select" id="question2" aria-placeholder="Select an Option">
+                      <option value></option>
+                      <option value="1">1 (Novice)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Expert)</option>
+                    </select>
 
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <h5>JavaScript Expertise Level</h5>
-                                        <select class="chosen-select" id="question3"
-                                            aria-placeholder="Select an Option">
-                                            <option value></option>
-                                            <option value="1">1 (Novice)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5 (Expert)</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-success submit">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{/unless}}
-
-
-                {{#if data}}
-                {{#each data}}
-                <li>{{name}}</li>
-                <li>{{email}}</li>
-                <li>{{html}}</li>
-                <li>{{css}}</li>
-                <li>{{javascript}}</li>
-
-                {{/each}}
-                {{/if}}
+                  </div>
+                  <div class="input-field col s12">
+                    <h5>JavaScript Expertise Level</h5>
+                    <select class="chosen-select" id="question3" aria-placeholder="Select an Option">
+                      <option value></option>
+                      <option value="1">1 (Novice)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Expert)</option>
+                    </select>
+                  </div>
+                  <button type="submit" id="survey-submit" class="btn btn-success submit">Submit</button>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <!-- Display match -->
-    <div id="results-modal" class="modal fade" role="dialog" id="survey-modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h2 class="modal-title">
-                        <strong>Study Buddy</strong>
-                    </h2>
-                </div>
-                <div class="modal-body">
-                    <h2>My study buddy is <span id="match-name"></span></h2>
-                    <h2>Contact my study buddy at <span id="match-email"></span></h2>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+
+{{/unless}}
+<div class="container--results">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="results">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>HTML Expertise</th>
+          <th>CSS Expertise</th>
+          <th>JavaScript Expertise</th>
+        </tr>
+        <tr>
+      {{#if data}}
+      {{#each data}}
+      <td>{{name}}</td>
+      <td>{{email}}</td>
+      <td>{{html}}</td>
+      <td>{{css}}</td>
+      <td>{{javascript}}</td>
+        </tr>
+      {{/each}}
+      {{/if}}
+      </table>
     </div>
+  </div>
+</div>
+
+<!-- Display match -->
+<div id="results-modal" class="modal fade" role="dialog" id="survey-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title">
+          <strong>Study Buddy</strong>
+        </h2>
+      </div>
+      <div class="modal-body">
+        <h2>My study buddy is <span id="match-name"></span></h2>
+        <h2>Contact my study buddy at <span id="match-email"></span></h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Custom Script -->
