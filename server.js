@@ -86,13 +86,6 @@ io.on('connection', (socket) => {
   });
 });
 
-
-
-
-
-
-
-
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
