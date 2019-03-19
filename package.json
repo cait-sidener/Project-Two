@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "chat-engine": "^0.9.21",
+    "chat-engine-webrtc": "0.0.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
