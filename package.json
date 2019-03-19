@@ -1,5 +1,5 @@
 {
-  "name": "Project-Two",
+  "name": "project-two",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -34,5 +34,17 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cait-sidener/Project-Two.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/cait-sidener/Project-Two/issues"
+  },
+  "homepage": "https://github.com/cait-sidener/Project-Two#readme"
 }
