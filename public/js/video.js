@@ -100,8 +100,8 @@ window.onbeforeunload = (event) => {
 // })
 
 var ChatEngine = ChatEngineCore.create({
-    publishKey: 'pub-c-ae0567b8-107c-4d53-97bd-3fb6dd5d68e5',
-    subscribeKey: 'sub-c-43417348-49e5-11e9-b0df-968893e54af3'
+    publishKey: 'pub-c-b3a87bda-d5a4-4060-813c-5a924d686be7',
+    subscribeKey: 'sub-c-405690ca-4a9c-11e9-bc3e-aabf89950afa'
 }, {
         globalChannel: "chat-engine-webrtc-example",
         // globalChannel: "Channel-7wyo8g8g5",
