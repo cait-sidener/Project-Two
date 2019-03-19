@@ -6,23 +6,22 @@ a:link {
   background: #85898a;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
   display:inline-block;
-  font-size:2em;
   padding:.5em 1em;
   text-decoration:none;
   margin: 5px;
   transform: skew(-20deg);
-  height: 3em;
-  width: 10em;
+  width: 223px;
 }
 
 .btn:hover {
   box-shadow: 0 0 0 ;
 }
 
-#btnContainer {
+.btnContainer {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin: 15px;
 }
 
 .card {
@@ -289,4 +288,34 @@ h2{
 table#results {
   width: calc(100% - 20px);
   margin: 0px 10px;
+}
+
+/* Resources */
+
+.btnContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+
+}
+
+#html-links{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#js-links{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#css-links{
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.resourceLinks, .resource-links{
+  text-align: center;
+  color: white;
 }
