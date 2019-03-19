@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log("hello!");
   // Getting jQuery references to the survey email, name, form, and category select
   var emailInput = $("#email");
   var nameInput = $("#name");
@@ -8,8 +9,12 @@ $(document).ready(function() {
   var javascript = $("#question3");
   console.log(cmsForm);
 
+  $(document).on("click", function() {
+    event.preventDefault();
+    console.log($(this));
+  })
   // Adding an event listener for when the form is submitted
-  $(cmsForm).on("submit", function(event) {
+  $("#survey-submit").on("click", function(event) {
     event.preventDefault();
     // Wont submit the survey if we are missing a email or a name
     if (!nameInput.val().trim() || !emailInput.val().trim()) {
