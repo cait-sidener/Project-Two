@@ -46,6 +46,4 @@ module.exports = function(app) {
   app.get("/chatroom", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/chatroom.html"));
   });
-
-  
 };

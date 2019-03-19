@@ -13,6 +13,7 @@
 
     <div id="mainContainer">
         <div class="headerWrap">
+            <!-- Navbar start -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">SB LOGO</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -33,6 +34,7 @@
                     </ul>
                 </div>
             </nav>
+            <!-- Navbar end -->
 
             <div id="username-input-modal" class="modal-background">
                 <div class="user-input-modal">
@@ -90,11 +92,13 @@
                 <img class="hide" id="broken-my-video" src="./assets/images/broken.jpg">
             </div>
 
+            <!-- Jumbotron start -->
             <div class="jumbotron jumbotron-fluid" id="jumbotron">
                 <div class="container">
                     <h1 class="display-4">STUDY BUDDY</h1>
                 </div>
             </div>
+            <!-- Jumbotron end -->
 
             <div id="chat-interface" class="chat-interface">
                 <div class="video-header">
@@ -131,9 +135,11 @@
         </div>
     </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/chat-engine@0.9.18/dist/chat-engine.js"></script>
-            <script src="../dist/chat-engine-webrtc.js"></script>
-            <script src="./js/video.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chat-engine@latest/dist/chat-engine.min.js"></script>
+    <script src="./js/video.js" type="text/javascript"></script>
 
 </body>
 

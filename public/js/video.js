@@ -39,12 +39,6 @@ var chatInterface = document.getElementById("chat-interface");
     var localStream; // Local audio and video stream
     var noVideoTimeout; // Used for checking if video connection succeeded
     
-    // Xirsys API Info, not required for WebRTC, but it helps
-    var turnApiUrl = "https://pubsub.pubnub.com/v1/blocks/sub-key/sub-c-7c977f32-a1b3-11e8-bc5d-ae80c5ea0c92/turn-credentials";
-    var turnToken;
-    request(turnApiUrl, "GET").then((response) => { turnToken = response });
-    
-    
     // Init the audio and video stream on this client
     getLocalStream().then((myStream) => {
         localStream = myStream;
@@ -95,11 +89,14 @@ var chatInterface = document.getElementById("chat-interface");
     
     // Init ChatEngine
     var ChatEngine = ChatEngineCore.create({
-        publishKey: "pub-c-e7ff38ba-1e9a-404f-9ee5-d74fade71a12",
-        subscribeKey: "sub-c-fe243720-48d4-11e9-a969-064ab546e230"
+        publishKey: 'pub-c-ae0567b8-107c-4d53-97bd-3fb6dd5d68e5',
+        subscribeKey: 'sub-c-43417348-49e5-11e9-b0df-968893e54af3'
     }, {
-        globalChannel: "chat-engine-webrtc-example"
+        globalChannel: "chat-engine-webrtc-example",
+        debug: true
     });
+
+
     
     // Init the WebRTC plugin and chat interface here
     ChatEngine.on("$.ready", (data) => {
@@ -356,11 +353,11 @@ var chatInterface = document.getElementById("chat-interface");
         var messageToSend = messageInput.value.replace(/\r?\n|\r/g, '');
         var trimmed = messageToSend.replace(/(\s)/g, '');
     
-        if (trimmed.length > 0) {
-            ChatEngine.global.emit("message", {
-                text: messageToSend
-            });
-        }
+        // if (trimmed.length > 0) {
+        //     ChatEngine.global.emit("message", {
+        //         text: messageToSend
+        //     });
+        // }
     
         messageInput.value = '';
     }
