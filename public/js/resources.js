@@ -5,12 +5,12 @@ $(document).ready(function() {
     });
   });
   $("#btnBig2").click(function() {
-    $("#css-links").toggle("fast", function() {
+    $("#js-links").toggle("fast", function() {
       // Animation complete
     });
   });
   $("#btnBig3").click(function() {
-    $("#js-links").toggle("fast", function() {
+    $("#css-links").toggle("fast", function() {
       // Animation complete
     });
   });
