@@ -29,7 +29,7 @@ a:link {
 }
 
 .container--results {
-  margin-top: 30%;
+  margin-top: 20
 }
 
 .headerName {
@@ -51,6 +51,7 @@ a:link {
 #jumbotron{
   color: #85898a;
   background-color: #0051ba;
+  opacity: .5;
 }
 
 /* .list-group-item {
