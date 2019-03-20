@@ -27,14 +27,20 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members/:id", isAuthenticated, function(req, res) {
-    console.log("What's my ID??? " + req.params.id);
     db.Survey.findAll({
       where: {
         UserId: req.params.id
       }
     }).then(function(result) {
-      res.render("members", {
-        data: result
+      db.Survey.findAll({
+        where: {
+          UserId: result[0].matchId
+        }
+      }).then((matchUser) => {
+        res.render("members", {
+          data: result,
+          match: matchUser
+        });
       });
     });
   });
