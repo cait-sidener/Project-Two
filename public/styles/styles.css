@@ -25,11 +25,11 @@ a:link {
 }
 
 .card {
-  width: 300%;
+  width: 100%;
 }
 
 .container--results {
-  margin-top: 30%;
+  margin-top: 20
 }
 
 .headerName {
@@ -51,6 +51,7 @@ a:link {
 #jumbotron{
   color: #85898a;
   background-color: #0051ba;
+  opacity: .5;
 }
 
 /* .list-group-item {
@@ -91,6 +92,19 @@ a:link {
   margin-top: 4%;
   transform: none;
   width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  #survey-submit {
+    background-color: #0051ba;
+    color: #fff;
+    font-size: .5em;
+    margin-top: 4%;
+    transform: none;
+    width: 80px;
+    text-align: center;
+  }
+  
 }
 
 tr{
