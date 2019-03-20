@@ -87,31 +87,15 @@ window.onbeforeunload = (event) => {
     ChatEngine.disconnect();
 };
 
-// Init ChatEngine
-// var PubNub = new PubNub({
-//     publishKey: 'pub-c-ae0567b8-107c-4d53-97bd-3fb6dd5d68e5',
-//     subscribeKey: 'sub-c-43417348-49e5-11e9-b0df-968893e54af3'
-// });
-
-// var ChatEngine = ChatEngineCore.create({
-//     publishKey: 'Your Publish Key Here',
-//     subscribeKey: 'Your Subscribe Key Here'
-
-// })
-
 var ChatEngine = ChatEngineCore.create({
     publishKey: 'pub-c-b3a87bda-d5a4-4060-813c-5a924d686be7',
     subscribeKey: 'sub-c-405690ca-4a9c-11e9-bc3e-aabf89950afa'
 }, {
         globalChannel: "chat-engine-webrtc-example",
-        // globalChannel: "Channel-7wyo8g8g5",
-        debug: true
+        //debug: true
     });
 
-
-
 // Init the WebRTC plugin and chat interface here
-// Added 115 late
 ChatEngine.connect('Username');
 ChatEngine.on("$.ready", (data) => {
     var onlineUuids = [];
@@ -367,13 +351,14 @@ function sendMessage() {
     var messageToSend = messageInput.value.replace(/\r?\n|\r/g, '');
     var trimmed = messageToSend.replace(/(\s)/g, '');
 
-    // if (trimmed.length > 0) {
-    //     ChatEngine.global.emit("message", {
-    //         text: messageToSend
-    //     });
-    // }
+    if (trimmed.length > 0) {
+        ChatEngine.global.emit("message", {
+            text: messageToSend
+        });
+    }
 
     messageInput.value = '';
+    console.log(messageToSend)
 }
 
 // Makes a new, version 4, universally unique identifier (UUID). Written by
