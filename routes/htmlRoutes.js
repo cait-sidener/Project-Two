@@ -45,8 +45,11 @@ module.exports = function(app) {
     });
   });
 
+
   app.get("/resources", function(req, res) {
+    console.log("Hello Resources");
     res.sendFile(path.join(__dirname, "../public/resources.html"));
+
   });
 
   app.get("/chatroom", function(req, res) {
