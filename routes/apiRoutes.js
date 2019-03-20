@@ -22,8 +22,7 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function (req, res) {
-    console.log(req.body);
+  app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -64,27 +63,29 @@ module.exports = function (app) {
     // create takes an argument of an object describing the item we want to insert
     // into our table. In this case we just we pass in an object with a text and
     // complete property
-    res.send("Survey route hit!");
     var userData = {
       name: req.body.name,
       email: req.body.email,
-      html: req.body.html,
-      css: req.body.css,
-      javascript: req.body.javascript,
-      UserId: req.body.UserId
+      html: parseInt(req.body.html, 10),
+      css: parseInt(req.body.css, 10),
+      javascript: parseInt(req.body.javascript, 10),
+      UserId: parseInt(req.body.UserId, 10)
     };
-    var bestMatch;
+    // get new user data from req
+    //compare to existing users to get a match
+    //add match info to new user
+    //add new user to db
     db.Survey.findAll({
       where: {
         html: userData.html,
         css: userData.css,
         javascript: userData.javascript
       }
-    }).then(function (result) {
-      bestMatch = result[0];
-      console.log(result);
-      db.Survey.create(userData).then(function () {
-        // res.json(result);
+    }).then(function(result) {
+      const match = result.pop();
+      userData.matchId = parseInt(match.id, 10);
+      db.Survey.create(userData).then(function() {
+        res.redirect(`/members/${userData.UserId}`);
       });
     });
   });
@@ -93,7 +94,7 @@ module.exports = function (app) {
   app.get("/api/survey/:id", function (req, res) {
     db.Survey.findOne({
       where: {
-        id: req.params.id
+        UserId: req.params.id
       }
     }).then(function (dbSurvey) {
       res.json(dbSurvey);

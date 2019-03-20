@@ -4,16 +4,12 @@ module.exports = function(sequelize, DataTypes) {
     // The email cannot be null, and must be a proper email before creation
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: false
     },
     // The email cannot be null
     email: {
       type: DataTypes.STRING,
       allowNull: false
-      //   validate: {
-      //     isEmail: true
-      //   }
     },
     html: {
       type: DataTypes.INTEGER,
@@ -26,6 +22,11 @@ module.exports = function(sequelize, DataTypes) {
     javascript: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    matchId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      default: null
     }
   });
   Survey.associate = function(models) {

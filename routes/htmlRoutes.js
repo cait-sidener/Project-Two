@@ -29,12 +29,18 @@ module.exports = function(app) {
   app.get("/members/:id", isAuthenticated, function(req, res) {
     db.Survey.findAll({
       where: {
-        id: req.params.id
+        UserId: req.params.id
       }
     }).then(function(result) {
-      console.log("RESULT: ", result);
-      res.render("members", {
-        data: result
+      db.Survey.findAll({
+        where: {
+          UserId: result[0].matchId
+        }
+      }).then((matchUser) => {
+        res.render("members", {
+          data: result,
+          match: matchUser
+        });
       });
     });
   });

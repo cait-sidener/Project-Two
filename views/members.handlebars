@@ -32,7 +32,6 @@
     <div class="row">
       <div class="col-md-12 blog-container">
       
-        <button>Take Survey</button>
         <div id="survey-form" class="row">
           <div class="col-8 offset-2">
             <div class="card mt-4">
@@ -113,14 +112,25 @@
           <th>CSS Expertise</th>
           <th>JavaScript Expertise</th>
         </tr>
+        {{#if data}}
+        {{#each data}}
         <tr>
-          {{#if data}}
-          {{#each data}}
           <td>{{name}}</td>
           <td>{{email}}</td>
           <td>{{html}}</td>
           <td>{{css}}</td>
           <td>{{javascript}}</td>
+          <td>{{matchUser}}</td>
+          <td>{{matchEmail}}</td>
+        </tr>
+        {{/each}}
+        {{/if}}
+        {{#if match}}
+        {{#each match}}
+        <tr>
+          <td colspan="2">Match:</td>
+          <td colspan="2">{{name}}</td>
+          <td colspan="2">{{email}}</td>
         </tr>
         {{/each}}
         {{/if}}
@@ -129,25 +139,3 @@
   </div>
 </div>
 
-<!-- Display match -->
-<div id="results-modal" class="modal fade" role="dialog" id="survey-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title">
-          <strong>Study Buddy</strong>
-        </h2>
-      </div>
-      <div class="modal-body">
-        <h2>My study buddy is <span id="match-name"></span></h2>
-        <h2>Contact my study buddy at <span id="match-email"></span></h2>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>

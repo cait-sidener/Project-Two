@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("hello!");
   // Getting jQuery references to the survey email, name, form, and category select
   var emailInput = $("#email");
   var nameInput = $("#name");
@@ -22,7 +21,6 @@ $(document).ready(function() {
   // Update a given survey, bring user to the members page when done
   function insertSurvey() {
     var userId = window.location.pathname.split("/").pop();
-    console.log(userId);
     var survey = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
@@ -38,7 +36,6 @@ $(document).ready(function() {
       html.val("");
       css.val("");
       javascript.val("");
-      window.location.reload();
     });
   }
 });
