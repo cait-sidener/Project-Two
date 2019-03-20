@@ -9,10 +9,6 @@ $(document).ready(function() {
   var javascript = $("#question3");
   console.log(cmsForm);
 
-  $(document).on("click", function() {
-    event.preventDefault();
-    console.log($(this));
-  })
   // Adding an event listener for when the form is submitted
   $("#survey-submit").on("click", function(event) {
     event.preventDefault();
