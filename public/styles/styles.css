@@ -6,7 +6,7 @@
   background: #0051ba;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
   display:inline-block;
-  padding:.5em 1em;
+  padding:.9em 1em;
   text-decoration:none;
   margin: 5px;
   transform: skew(-20deg);
@@ -19,13 +19,26 @@
   box-shadow: 0 0 0 ;
 }
 
-.btnContainer{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 15px;
 }
 
+.btnRow {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+}
+
+.container--results {
+  position: relative;
+  height: 100%;
+}
+  
 #btnSub{
   background: #0051ba;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
@@ -139,9 +152,29 @@ html, input {
     sans-serif;
 }
 
-#html-links{
-  grid-column: 1;
-  grid-row: 2;
+ul.navbar-nav {
+  width: 100%;
+}
+
+.nav-item_rightAlign {
+  width: 100%;
+  text-align: right;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav-item_rightAlign {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .inputMessage {

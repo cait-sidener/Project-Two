@@ -29,9 +29,12 @@
                     <li class="nav-item">
                             <a class="nav-link" target="_blank" href="https://mysterious-river-33772.herokuapp.com/">Chat</a>
                     </li>    
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a id="videoMenuLink" class="nav-link" href="">VidChat</a>
-                    </li> -->
+                    </li>
+                    <li class="nav-item nav-item_rightAlign">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -45,43 +48,54 @@
     </div>
 
     <div id="contentContainer">
-            <div class="btnContainer">
-                    <button type="button" class="btn btnSchool btn-lg" id="btnBig1"><span class="skew-fix">HTML</span></button>
-                        <button type="button" class="btn btnSchool btn-lg" id="btnBig2"><span class="skew-fix">JAVASCRIPT</span></button>
+        <div class="btnContainer">
+            <div class="row btnRow">
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btnSchool btn-lg" id="btnBig1"><span class="skew-fix">HTML</span></button>
+                        </div>
+                        <div class="col-sm-12" id="html-links" style="display:none;">
+                            <h3 class="resource-links"><a class="resourceLinks" href="https://www.w3schools.com/html/" target="_blank">W3 School</a></h3>
+                                <h3 class="resource-links"><a class="resourceLinks" href="https://www.codecademy.com/learn/learn-html" target="_blank">Codecademy</a></h3>
+                                    <h3 class="resource-links"><a class="resourceLinks" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">MDN
+                                            Web Docs</a></h3>
+                                        <h3 class="resource-links"><a class="resourceLinks" href="https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-html/pt/html-basics" target="_blank">Khan
+                                                Academy</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btnSchool btn-lg" id="btnBig2"><span class="skew-fix">JAVASCRIPT</span></button>
+                        </div>
+                        <div class="col-sm-12" id="js-links" style="display:none;">
+                            <h3 class="resource-links"><a class="resourceLinks" href="https://www.w3schools.com/js/" target="_blank">W3 School</a></h3>
+                                <h3 class="resource-links"><a class="resourceLinks" href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy</a></h3>
+                                    <h3 class="resource-links"><a class="resourceLinks" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript" target="_blank">MDN
+                                            Web Docs</a></h3>
+                                        <h3 class="resource-links"><a class="resourceLinks" href="https://www.khanacademy.org/computing/computer-programming/programming" target="_blank">Khan
+                                                Academy</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <button type="button" class="btn btnSchool btn-lg" id="btnBig3"><span class="skew-fix">CSS</span></button>
-
-        <div class="row" id="html-links" style="display:none;">
-            <div class="col-md-12">
-                <h3 class="resource-links"><a class="resourceLinks" href="https://www.w3schools.com/html/" target="_blank">W3 School</a></h3>
-                    <h3 class="resource-links"><a class="resourceLinks" href="https://www.codecademy.com/learn/learn-html" target="_blank">Codecademy</a></h3>
-                        <h3 class="resource-links"><a class="resourceLinks" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">MDN
-                                Web Docs</a></h3>
-                            <h3 class="resource-links"><a class="resourceLinks" href="https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-html/pt/html-basics" target="_blank">Khan
-                                    Academy</a></h3>
-            </div>
-        </div>
-
-        <div class="row" id="js-links" style="display:none;">
-            <div class="col-md-12">
-                <h3 class="resource-links"><a class="resourceLinks" href="https://www.w3schools.com/js/" target="_blank">W3 School</a></h3>
-                    <h3 class="resource-links"><a class="resourceLinks" href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy</a></h3>
-                        <h3 class="resource-links"><a class="resourceLinks" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript" target="_blank">MDN
-                                Web Docs</a></h3>
-                            <h3 class="resource-links"><a class="resourceLinks" href="https://www.khanacademy.org/computing/computer-programming/programming" target="_blank">Khan
-                                    Academy</a></h3>
-            </div>
-        </div>
-
-        <div class="row" id="css-links" style="display:none;">
-            <div class="col-md-12">
-                <h3 class="resource-links" id="css-w3"><a class="resourceLinks" href="https://www.w3schools.com/css/" target="_blank">W3 School</a></h3>
-                    <h3 class="resource-links"id="css-code"><a class="resourceLinks" href="https://www.codecademy.com/learn/learn-css" target="_blank">Codecademy</a></h3>
-                        <h3 class="resource-links" id="css-mdn"><a class="resourceLinks" href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">MDN
-                                Web Docs</a></h3>
-                            <h3 class="resource-links"id="css-ka"><a class="resourceLinks" href="https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css" target="_blank">Khan
-                                    Academy</a></h3>
-            </div>
-        </div>
+                        </div>
+                        <div class="col-sm-12" id="css-links" style="display:none;">
+                            <h3 class="resource-links" id="css-w3"><a class="resourceLinks" href="https://www.w3schools.com/css/" target="_blank">W3 School</a></h3>
+                                <h3 class="resource-links"id="css-code"><a class="resourceLinks" href="https://www.codecademy.com/learn/learn-css" target="_blank">Codecademy</a></h3>
+                                    <h3 class="resource-links" id="css-mdn"><a class="resourceLinks" href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">MDN
+                                            Web Docs</a></h3>
+                                        <h3 class="resource-links"id="css-ka"><a class="resourceLinks" href="https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css" target="_blank">Khan
+                                                Academy</a></h3>    
+                        </div>
+                    </div>
+                </div>
+            </div>                              
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

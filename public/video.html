@@ -35,6 +35,9 @@
                         <li class="nav-item active">
                             <a id="videoMenuLink" class="nav-link" href="">VidChat</a>
                         </li>
+                        <li class="nav-item nav-item_rightAlign">
+                            <a id="videoMenuLink" class="nav-link" href="/logout">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -148,6 +151,30 @@
     <script src="https://cdn.jsdelivr.net/npm/chat-engine@0.9.18/dist/chat-engine.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chat-engine-webrtc@latest/dist/chat-engine-webrtc.js"></script>
 
+    <script>
+    // NavBarlinks solution:
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+var userId = getUrlParameter('userId');
+var profileLink = "/members/" + userId;
+$("#profileMenuLink").attr("href", profileLink);
+var resourceLink = "/resources.html?userId=" + userId;
+$("#resourcesMenuLink").attr("href", resourceLink);
+var videoLink = "/video.html?userId=" + userId;
+$("#videoMenuLink").attr("href", videoLink);
+    </script>
 
     <script src="./js/video.js" type="text/javascript"></script>
 
