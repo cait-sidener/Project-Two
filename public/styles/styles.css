@@ -1,7 +1,3 @@
-a:link {
-  color: #e8000d;
-}
-
 .btn {
   background: #85898a;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
@@ -29,7 +25,13 @@ a:link {
 }
 
 .container--results {
-  margin-top: 20
+  position: relative;
+  height: 100%;
+}
+
+.container--results .row {
+  position: relative;
+  top: calc(50% - 128px);
 }
 
 .headerName {
@@ -62,6 +64,11 @@ a:link {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.container--blog {
+  position: relative;
+  z-index: 1;
 }
 
 #results td {
