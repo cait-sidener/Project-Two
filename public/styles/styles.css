@@ -1,5 +1,5 @@
 .btn {
-  background: #85898a;
+  background: #0051ba;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
   display:inline-block;
   padding:.5em 1em;
@@ -7,6 +7,8 @@
   margin: 5px;
   transform: skew(-20deg);
   width: 223px;
+  color: white;
+  opacity: .8;
 }
 
 .btn:hover {
@@ -51,14 +53,11 @@
 }
 
 #jumbotron{
-  color: #85898a;
+  color: white;
   background-color: #0051ba;
   opacity: .5;
+  border: none;
 }
-
-/* .list-group-item {
-  line-height: 2.5;
-} */
 
 #mainContainer{
   height: 100%;
@@ -234,7 +233,8 @@ h2{
   transform: skew(-20deg);
   height: 3em;
   width: 10em;
-  color: #85898a
+  color: white;
+  opacity: .8;
 }
 
 #btnSub:hover {
