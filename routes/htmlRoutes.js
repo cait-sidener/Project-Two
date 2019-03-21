@@ -13,7 +13,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/signup", function(req, res) {
@@ -32,24 +32,28 @@ module.exports = function(app) {
         UserId: req.params.id
       }
     }).then(function(result) {
-      db.Survey.findAll({
-        where: {
-          UserId: result[0].matchId
-        }
-      }).then((matchUser) => {
-        res.render("members", {
-          data: result,
-          match: matchUser
+      if (result.length > 0) {
+        db.Survey.findAll({
+          where: {
+            UserId: result[0].matchId
+          }
+        }).then(matchUser => {
+          res.render("members", {
+            data: result,
+            match: matchUser
+          });
         });
-      });
+      } else {
+        res.render("members", {
+          data: null,
+          match: null
+        });
+      }
     });
   });
 
-
   app.get("/resources", function(req, res) {
-    console.log("Hello Resources");
     res.sendFile(path.join(__dirname, "../public/resources.html"));
-
   });
 
   app.get("/chatroom", function(req, res) {
