@@ -127,18 +127,21 @@
         </tr>
         {{/each}}
         {{/if}}
-        {{#if match}}
-        {{#each match}}
-        <tr>
-          <td colspan="2">Match:</td>
-          <td colspan="2">{{name}}</td>
-          <td colspan="2">{{email}}</td>
-        </tr>
-        {{/each}}
-        {{/if}}
+
       </table>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+          {{#if match}}
+        {{#each match}}
+          <h3 class="match">Match:</h3>
+          <h4 class="match-details">{{name}}</h4>
+          <h4 class="match-details">{{email}}</h4>
+        {{/each}}
+        {{/if}}
+        </div>
+        </div>
 </div>
 
 <script src="/js/members.js" type="text/javascript"></script>
