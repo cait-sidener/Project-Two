@@ -1,3 +1,4 @@
+// Please note: do not use eslint. It will break this file. :(
 var chatInterface = document.getElementById("chat-interface");
 var myVideoSample = document.getElementById("my-video-sample");
 var myVideo = document.getElementById("my-video");

@@ -9,24 +9,25 @@ This application connects people with similar interests, matched by level of ski
 
 Visit this site to deploy the app!
 
-(insert Heroku link)
+https://immense-bastion-90394.herokuapp.com/
 
 ## **Technical Details**
 **Technologies Used**
 
 Study Buddy uses the following technologies:
-- Node
+
 - Express
 - Handlebars
-- Sequelize
+- Node
 - Passport
-- Socket.io
 - PubNub
 - Restful APIs
+- Sequelize
+- Socket.io
 
 **NPM Installations**
 
-Navigate to the root of your project. Then in the terminal command line run npm init. This will initalize a package.json for your project.
+Navigate to the root of your project. Then in the terminal command line run "npm init". This will initalize a package.json for your project. Then, run "npm install".
 
 The following NPM installations are included:
 - npm install chat-engine
@@ -39,23 +40,49 @@ The following NPM installations are included:
 - npm install --save sequelize
 - npm install socket.io
 
-**Explanation**
+**Introduction**
 
-The application uses...
+Navigate to the home screen to either login or create a new username and password with Study Buddy.
 
-## **Screenshots**
-
-The home page will...
-
-![Home](LINK)
+![Home](/public/img/login.png)
 
 
-The user will...
+The user will complete a brief survey to indicate their expertise in web development skills such as HTML, CSS, and JavaScript.
 
-![Survey](LINK)
+The user will then be matched with a Study Buddy of similar expertise.
 
-**Thank you for visiting my FriendFinder project!**
+The user may then either 1) login to the chat functionality to chat with their Study Buddy,
 
-## **Author**
+![Survey](/public/img/chat.png)
 
-**Ashley Shaw** - https://ashbshaw.github.io/Ashley-Shaw-Portfolio/
+... or 2) connect with their Study Buddy via audio and video in video chat.
+
+![Survey](/public/img/vid.png)
+
+A resources page is available for quick subject-specific reference.
+
+![Survey](/public/img/resources.png)
+
+**Thank you for visiting Study Buddy!**
+
+## **Authors**
+
+**Cait Sidener** 
+
+Responsible for application infrastructure and functionality.
+Visit Cait on GitHub at https://github.com/cait-sidener.
+
+**Beshoy Rezek** 
+
+Responsible for chat functionality.
+Visit Beshoy on GitHub athttps://github.com/beshoyr4. 
+
+**Joe Scholz** 
+
+Responsible for styling.
+Visit Joe on GitHub at https://github.com/JoeScholz.
+
+**Ashley Shaw**
+
+Responsible for video chat functionality.
+Visit Ashley on GitHub at https://github.com/ashbshaw.
