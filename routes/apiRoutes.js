@@ -33,12 +33,11 @@ module.exports = function (app) {
       .catch(function (err) {
         console.log(err);
         res.json(err);
-        // res.status(422).json(err.errors[0].message);
       });
   });
 
   // Route for logging user out
-  app.get("/logout", function (req, res) {
+  app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
   });
@@ -60,9 +59,6 @@ module.exports = function (app) {
   // Survey Post
   // POST route for saving a new survey
   app.post("/api/survey", function (req, res) {
-    // create takes an argument of an object describing the item we want to insert
-    // into our table. In this case we just we pass in an object with a text and
-    // complete property
     var userData = {
       name: req.body.name,
       email: req.body.email,
@@ -71,10 +67,6 @@ module.exports = function (app) {
       javascript: parseInt(req.body.javascript, 10),
       UserId: parseInt(req.body.UserId, 10)
     };
-    // get new user data from req
-    //compare to existing users to get a match
-    //add match info to new user
-    //add new user to db
     db.Survey.findAll({
       where: {
         html: userData.html,
@@ -100,5 +92,4 @@ module.exports = function (app) {
       res.json(dbSurvey);
     });
   });
-
-  };
+};
