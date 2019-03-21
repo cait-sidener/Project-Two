@@ -75,7 +75,7 @@ Visit Cait on GitHub at https://github.com/cait-sidener.
 **Beshoy Rezek** 
 
 Responsible for chat functionality.
-GitHub link coming soon!
+Visit Beshoy on GitHub athttps://github.com/beshoyr4. 
 
 **Joe Scholz** 
 
