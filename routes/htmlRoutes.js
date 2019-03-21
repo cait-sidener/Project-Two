@@ -32,7 +32,6 @@ module.exports = function(app) {
         UserId: req.params.id
       }
     }).then(function(result) {
-      console.log(result);
       if (result.length > 0) {
         db.Survey.findAll({
           where: {

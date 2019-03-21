@@ -6,7 +6,6 @@ $(document).ready(function() {
   var html = $("#question1");
   var css = $("#question2");
   var javascript = $("#question3");
-  console.log(cmsForm);
 
   // Adding an event listener for when the form is submitted
   $("#survey-submit").on("click", function(event) {
