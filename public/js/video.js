@@ -472,25 +472,29 @@ function request(url, method, options) {
     });
 }
 
-// NavBarlinks solution:
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
+// $(document).ready(function() {
+//   // NavBarlinks solution:
+//   var getUrlParameter = function getUrlParameter(sParam) {
+//     var sPageURL = window.location.search.substring(1),
+//         sURLVariables = sPageURL.split('&'),
+//         sParameterName,
+//         i;
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
+//     for (i = 0; i < sURLVariables.length; i++) {
+//         sParameterName = sURLVariables[i].split('=');
 
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
-};
-var userId = getUrlParameter('userId');
-var profileLink = "/members/" + userId;
-$("#profileMenuLink").attr("href", profileLink);
-var profileLink = "/resources.html?userId=" + userId;
-$("#resourcesMenuLink").attr("href", profileLink);
-var profileLink = "/video.html?userId=" + userId;
-$("#videoMenuLink").attr("href", profileLink);
+//         if (sParameterName[0] === sParam) {
+//             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+//         }
+//     }
+// };
+// var userId = getUrlParameter('userId');
+// var profileLink = "/members/" + userId;
+// $("#profileMenuLink").attr("href", profileLink);
+// var resourceLink = "/resources.html?userId=" + userId;
+// $("#resourcesMenuLink").attr("href", resourceLink);
+// var videoLink = "/video.html?userId=" + userId;
+// $("#videoMenuLink").attr("href", videoLink);
+// console.log("hello vid chat");
+// // End Document Ready
+// });

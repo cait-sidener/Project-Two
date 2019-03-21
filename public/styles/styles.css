@@ -2,7 +2,7 @@
   background: #0051ba;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
   display:inline-block;
-  padding:.5em 1em;
+  padding:.9em 1em;
   text-decoration:none;
   margin: 5px;
   transform: skew(-20deg);
@@ -20,6 +20,10 @@
   justify-content: center;
   text-align: center;
   margin: 15px;
+}
+
+.btnRow {
+  width: 100%;
 }
 
 .card {
@@ -154,6 +158,22 @@ html, body {
 ul {
   list-style: none;
   word-wrap: break-word;
+}
+
+ul.navbar-nav {
+  width: 100%;
+}
+
+.nav-item_rightAlign {
+  width: 100%;
+  text-align: right;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav-item_rightAlign {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 /* Pages */
@@ -312,14 +332,6 @@ table#results {
 }
 
 /* Resources */
-
-.btnContainer{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
-
-}
 
 #html-links{
   grid-column: 1;
