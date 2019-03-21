@@ -11,7 +11,7 @@
   margin: 5px;
   transform: skew(-20deg);
   width: 223px;
-  color: white;
+  color: #fff;
   opacity: .8;
 }
 
@@ -26,13 +26,6 @@
   grid-gap: 10px;
 }
 
-.btnContainer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 15px;
-}
-
 #btnSub{
   background: #0051ba;
   box-shadow:10px 10px 0 rgba(0,0,0,.5);
@@ -44,7 +37,7 @@
   transform: skew(-20deg);
   height: 3em;
   width: 10em;
-  color: white;
+  color: #fff;
   opacity: .8;
 }
 
@@ -72,9 +65,17 @@
   z-index: 1;
 }
 
+.container--match {
+  background-color: #7a7c99;
+  border: solid 2px;
+  border-color: #0051ba;
+  margin-left: 35%;
+  margin-top: 5%;
+  width: 30%;
+}
+
 .container--results {
-  position: relative;
-  height: 100%;
+  margin-top: 5%;
 }
 
 .container--results .row {
@@ -87,8 +88,12 @@
   grid-row: 2;
 }
 
+h1 {
+  color: #fff;
+}
+
 h2{
-  color: white;
+  color: #fff;
 }
 
 .headerName {
@@ -140,12 +145,9 @@ html, input {
 }
 
 .inputMessage {
-  font-size: 100%;
-}
-
-.inputMessage {
   border: 10px solid #000;
   bottom: 0;
+  font-size: 100%;
   height: 60px;
   left: 0;
   outline: none;
@@ -161,7 +163,7 @@ html, input {
 }
 
 #jumbotron{
-  color: white;
+  color: #fff;
   background-color: #0051ba;
   opacity: .5;
   border: none;
@@ -218,11 +220,24 @@ html, input {
   background-repeat: no-repeat;
 }
 
-.messages {
-  font-size: 150%;
+.match {
+  color: #0051ba;
+  display: flex;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 2%;
+  justify-content: center;
+}
+
+.match-details {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
 }
 
 .messages {
+  font-size: 150%;
   height: 100%;
   margin: 0;
   overflow-y: scroll;
@@ -250,7 +265,7 @@ html, input {
 
 .resourceLinks, .resource-links{
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 #results td {
@@ -268,7 +283,7 @@ html, input {
 }
 
 #signUp{
-  color: white;
+  color: #fff;
   margin-left: 2%;
   font-size: 1.5em;
 }
@@ -290,12 +305,16 @@ html, input {
 }
 
 table#results {
-  width: calc(100% - 20px);
-  margin: 0px 10px;
+  border: solid 3px;
+  border-color: #0051ba;
+  width: calc(75% - 20px);
+  margin: 0px 10%;
 }
 
 tr{
-  background-color: #85898a;
+  background-color: #7a7c99;
+  color: #fff;
+  font-weight: bold;
 }
 
 ul {
